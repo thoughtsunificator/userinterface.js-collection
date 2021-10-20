@@ -4,26 +4,26 @@ userinterface.js-collection is a collection of UI elements to help build your UI
 
 ## Summary
 - [Getting started](#getting-started)
-	- [Prerequisites](#prerequisites)
-	- [Installing](#installing)
-	- [Usage](#usage)
+  - [Prerequisites](#prerequisites)
+  - [Installing](#installing)
+  - [Usage](#usage)
 - [Collection](#collection)
-	- [Control](#control)
-		- [Button](#collectionbutton)
-		- [Input](#collectioninput)
-		- [Input Color](#collectioninput_color)
-		- [Input File](#collectioninput_file)
-		- [Control](#collection)
-		- [Label Checkbox](#collectionlabel_checkbox)
-		- [Label Radio](#collectionlabel_radio)
-		- [Control](#collection)
-		- [Popup](#collectionpopup)
-			- [Form](#collectionpopup_form)
-			- [Confirm](#collectionpopup_confirm)
-			- [Controls](#collectionpopup_controls)
-		- [Resizable](#collectionresizable)
-		- [Select](#collectionselect)
-		- [Tab](#collectiontab)
+  - [Control](#control)
+    - [Button](#collectionbutton)
+    - [Input](#collectioninput)
+    - [Input Color](#collectioninput_color)
+    - [Input File](#collectioninput_file)
+    - [Control](#collection)
+    - [Label Checkbox](#collectionlabel_checkbox)
+    - [Label Radio](#collectionlabel_radio)
+    - [Control](#collection)
+    - [Popup](#collectionpopup)
+      - [Form](#collectionpopup_form)
+      - [Confirm](#collectionpopup_confirm)
+      - [Controls](#collectionpopup_controls)
+    - [Resizable](#collectionresizable)
+    - [Select](#collectionselect)
+    - [Tab](#collectiontab)
 - [Running the tests](#running-the-tests)
 
 ## Getting Started
@@ -43,20 +43,20 @@ userinterface.js-collection is a collection of UI elements to help build your UI
 <!DOCTYPE html>
 <html>
 <head>
-	<script src="./lib/userinterface.js/src/userinterface.js" type="text/javascript"></script>
-	<script src="./lib/userinterface.js-collection/userinterface/button.js" type="text/javascript"></script>
+  <script src="./lib/userinterface.js/src/userinterface.js" type="text/javascript"></script>
+  <script src="./lib/userinterface.js-collection/userinterface/button.js" type="text/javascript"></script>
 </head>
 <body>
 <noscript>
-	This feature requires JavaScript to be enabled.
+  This feature requires JavaScript to be enabled.
 </noscript>
 <script>
-	const application = {}
-	UserInterface.runModel("collection.button", {
-		parentNode: document.body,
-		bindingArgs: [application, { action: "foo" }],
-		data: { text: "Button #1" }
-	})
+  const application = {}
+  UserInterface.runModel("collection.button", {
+    parentNode: document.body,
+    bindingArgs: [application, { action: "foo" }],
+    data: { text: "Button #1" }
+  })
 </script>
 </body>
 </html>
@@ -72,9 +72,9 @@ Controls models are hackable. You can pass ``style`` and ``className`` (or any o
 
 ````javascript
 UserInterface.runModel("collection.button", {
-	parentNode: document.body,
-	bindingArgs: [application, { action: "foo" }],
-	data: { text: "Button #1", className: "myButton" }
+  parentNode: document.body,
+  bindingArgs: [application, { action: "foo" }],
+  data: { text: "Button #1", className: "myButton" }
 })
 ````
 
@@ -90,9 +90,9 @@ Parameters:
 Usage:
 ````javascript
 UserInterface.runModel("collection.button", {
-	parentNode: document.body,
-	bindingArgs: [application, { value: "somevalue", action: "toggle", active: false }],
-	data: { text: "" }
+  parentNode: document.body,
+  bindingArgs: [application, { value: "somevalue", action: "toggle", active: false }],
+  data: { text: "" }
 })
 ````
 
@@ -106,9 +106,9 @@ Parameters:
 Usage:
 ````javascript
 UserInterface.runModel("collection.input", {
-	parentNode: document.body,
-	bindingArgs: [application, { action: "addText" }],
-	data: { type: "text", value: ""}
+  parentNode: document.body,
+  bindingArgs: [application, { action: "addText" }],
+  data: { type: "text", value: ""}
 })
 ````
 
@@ -122,9 +122,9 @@ Parameters:
 Usage:
 ````javascript
 UserInterface.runModel("collection.input_color", {
-	parentNode: document.body,
-	bindingArgs: [application, { action: "set color" }],
-	data: { value: "#FFFFFF"}
+  parentNode: document.body,
+  bindingArgs: [application, { action: "set color" }],
+  data: { value: "#FFFFFF"}
 })
 ````
 
@@ -138,8 +138,8 @@ Parameters:
 Usage:
 ````javascript
 UserInterface.runModel("collection.input_file", {
-	parentNode: document.body,
-	bindingArgs: [application, { action: "uploadFile" }]
+  parentNode: document.body,
+  bindingArgs: [application, { action: "uploadFile" }]
 })
 ````
 
@@ -153,9 +153,9 @@ Parameters:
 Usage:
 ````javascript
 UserInterface.runModel("collection.label_checkbox", {
-	parentNode: document.body,
-	bindingArgs: [application, { action: "setSomething" }],
-	data: { text: "Test" }
+  parentNode: document.body,
+  bindingArgs: [application, { action: "setSomething" }],
+  data: { text: "Test" }
 })
 ````
 
@@ -169,9 +169,9 @@ Parameters:
 Usage:
 ````javascript
 UserInterface.runModel("collection.label_radio", {
-	parentNode: document.body,
-	bindingArgs: [application, { action: "setSomething" }],
-	data: { text: "Test" }
+  parentNode: document.body,
+  bindingArgs: [application, { action: "setSomething" }],
+  data: { text: "Test" }
 })
 ````
 
@@ -182,8 +182,8 @@ Binding Prototype: ```function(* application, Control control)```
 Usage:
 ````javascript
 UserInterface.runModel("collection.popup", {
-	parentNode: document.body,
-	bindingArgs: [application]
+  parentNode: document.body,
+  bindingArgs: [application]
 })
 ````
 
@@ -198,10 +198,10 @@ Once the main popup is ran all you need to do to get ``form``, ``controls`` or `
 Usage:
 ````javascript
 UserInterface.announce(application, "popup confirm open", {
-	eventYes: "foo",
-	eventNo: "bar",
-	data: { /* whatever data you want to pass along to the foo event */ },
-	text: "Are you sure?"
+  eventYes: "foo",
+  eventNo: "bar",
+  data: { /* whatever data you want to pass along to the foo event */ },
+  text: "Are you sure?"
 })
 ````
 
@@ -219,10 +219,10 @@ When listening to the given event, fields can be retrieved through ``data.form``
 Usage:
 ````javascript
 UserInterface.announce(application, "popup form open", {
-	model: "model",
-	action: "create",
-	form: { /* whatever field you want to prepopulate */ },
-	data: { /* whatever data you want to pass along to the create event */ },
+  model: "model",
+  action: "create",
+  form: { /* whatever field you want to prepopulate */ },
+  data: { /* whatever data you want to pass along to the create event */ },
 })
 ````
 
@@ -241,12 +241,12 @@ For example, in this case we will be creating a button that will send the ``hell
 Usage:
 ````javascript
 UserInterface.announce(application, "popup controls open", [
-	{
-		model: "collection.button",
-		text: "Your text",
-		action: "hello",
-		// here we can also pass any property that collection.button would expect.
-	}
+  {
+    model: "collection.button",
+    text: "Your text",
+    action: "hello",
+    // here we can also pass any property that collection.button would expect.
+  }
 ])
 ````
 
@@ -265,8 +265,8 @@ Parameters:
 Usage:
 ````javascript
 UserInterface.runModel("collection.resizable", {
-	parentNode: targetElement,
-	bindingArgs: [application, ["horizontal", "vertical", "diagonal"]]
+  parentNode: targetElement,
+  bindingArgs: [application, ["horizontal", "vertical", "diagonal"]]
 })
 ````
 
@@ -280,9 +280,9 @@ Parameters:
 Usage:
 ````javascript
 UserInterface.runModel("collection.select", {
-	parentNode: document.body,
-	bindingArgs: [application, { action: "setSomething" }],
-	data: { options }
+  parentNode: document.body,
+  bindingArgs: [application, { action: "setSomething" }],
+  data: { options }
 })
 ````
 
@@ -300,9 +300,9 @@ Parameters:
 Usage:
 ````javascript
 UserInterface.runModel("collection.tab", {
-	parentNode: document.body,
-	bindingArgs: [application, { action: "tab set" }],
-	data: { name: "" }
+  parentNode: document.body,
+  bindingArgs: [application, { action: "tab set" }],
+  data: { name: "" }
 })
 ````
 
